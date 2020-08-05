@@ -20,3 +20,17 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('blog', 'blogController');
+
+//Route::get('/crearBlog/create', 'blog\blogController@create');
+//Route::get('/crearBlog/(blog)', 'blog\blogController@show');
+//Route::post('/crearBlog', 'blog\blogController@store');
+//Route::get('/crearBlog/{blog}/edit','blog\blogController@edit');
+//Route::get('/crearBlog/{blog}', 'blog\blogController@update');
+Route::resource('/crearBlog', 'blog\blogController');
+
+//Route::post('/crearBlog', function () {
+    //Blog::create([
+        //'titulo' => 'Titulo de la nota creada desde la ruta',
+        //'descripcion' => 'Contenido de la nota creada desde la ruta',
+    //]);
+//})->name('/crearBlog.store');
