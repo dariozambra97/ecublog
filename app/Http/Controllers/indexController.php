@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Blog;
 
-use App\Http\Controllers\blog\blog;
 
 class indexController extends Controller
 {
@@ -12,21 +13,14 @@ class indexController extends Controller
     {
     	
 
-    	$latestBlogs = [
-    		[
-    			'title' => 'Hola mundo 1',
-    			'content' => 'Mi contenido 1'
-    		],
-    		[
-    			'title' => 'Hola mundo 2',
-    			'content' => 'Mi contenido 2'
-    		]
-    	];
+    	$blogs = Blog::all();
+    	
+    	return view('welcome', ['blogs' =>$blogs]);
+    }
 
-    	$blogClae = new blog();
-    	$blogClae->getByVisit();
-    	//dd($blogClae);
-    	$blog = $blogClae->blog;
-    	return view('welcome', compact('blog','latestBlogs'));
+    public function show($id){
+    	$blogs = Blog::find($id);
+
+    	return view('/mis_blog', ['blogs' => $blogs]);
     }
 }
