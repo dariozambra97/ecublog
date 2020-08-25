@@ -18,12 +18,37 @@
                             <label for="descripcion">Descripcion</label>
                             <input type="text" name="descripcion" class="form-control" id="descripcion" value="{{ old('descripcion')}}"> 
                         </div> 
-                        <div class="form-group">
-                            <label for="foto">Foto</label>
-                            <input type="text" name="foto" class="form-control" id="foto"> 
-                        </div>                        
+                        <form enctype="multipart/form-data" action="uploader.php" method="POST">
+                        <input name="foto" type="file"class="form-control" id="foto"/>
+                        <input type="submit" value="Subir archivo" />
+                        </form>
+                        <div class="btn-group" role="group">
+                            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Estado
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                              <a class="dropdown-item" href="#">Activo</a>
+                              <a class="dropdown-item" href="#">Inactivo</a>
+                            </div>
+                          </div>
+                        
+                        <div class="btn-group" role="group">
+                            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Categoria
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                              <a class="dropdown-item" href="#">Deporte</a>
+                              <a class="dropdown-item" href="#">Salud</a>
+                              <a class="dropdown-item" href="#">Tecnologia</a>
+                              <a class="dropdown-item" href="#">Noticia</a>
+                              <a class="dropdown-item" href="#">Economia</a>
+                              <a class="dropdown-item" href="#">Familia</a>
+                              <a class="dropdown-item" href="#">Politica</a>
+                              <a class="dropdown-item" href="#">Ciencia</a>
+                         </div>
+                         </div>                        
                         <div class="form-group pt-2">
-                            <input class="btn btn-success" type="submit" value="crear">
+                            <input class="btn btn-outline-success" type="submit" value="crear">
                         </div>
 
                     </form>
