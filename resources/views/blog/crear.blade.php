@@ -26,6 +26,7 @@
                             <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                               Estado
                             </button>
+                        </div>
                             <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                               <a class="dropdown-item" href="#">Activo</a>
                               <a class="dropdown-item" href="#">Inactivo</a>
