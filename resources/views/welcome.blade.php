@@ -23,6 +23,27 @@
           <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
         </div>
       </div>
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            @foreach ($blogs as $blogs)
+          <div class="blogs-preview">
+            <a href="/index/{{$blogs['id']}}">
+              <h2 class="blogs.titulo">
+                {{$blogs['titulo']}}
+              </h2>
+              <h3 class="blogs.descripcion">
+                {{ getShorterString($blogs['descripcion'], 10 )}}
+              </h3>
+              <h4 class="blogs.foto">
+                {{$blogs['foto']}}
+              </h4>
+            </a>
+          </div>
+          @endforeach
+                 <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+      </div>
 
       <div class="row mb-2">
         <div class="col-md-6">
